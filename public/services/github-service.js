@@ -1,11 +1,21 @@
 angular.module('app').service('githubService', function($http){
 
-
-    this.getFollowing = () => {
-        return $http.get('http://localhost:3000/api/github/followers').then((res) => {
-            return res.data
-        })
+this.getFollowing = function () {
+      return $http({
+        method:'GET',
+        url: '/api/github/followers'
+      }).then(function (response) {
+        return response.data;
+      })
     }
 
+    this.getActivity = function (username) {
+      return $http({
+        method: 'GET',
+        url: 'api/github/' + username + '/activity'
+      }).then(function (response) {
+        return response.data
+      })
+    }
 
 })
