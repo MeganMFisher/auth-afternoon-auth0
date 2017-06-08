@@ -9,17 +9,18 @@ angular.module('app', ['ui.router'])
     $stateProvider
         .state('login', {
             url: '/',
-            templateUrl: './templates/login.html',
+            templateUrl: './templates/login.html'
         })
 
         .state('home', {
             url: '/home',
             templateUrl: './templates/home.html',
+            controller: 'homeCtrl'
         })
 
         .state('friend', {
             url: '/',
-            templateUrl: './templates/friend.html',
+            templateUrl: './templates/friend.html'
         })
 
 })
